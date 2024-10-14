@@ -13,4 +13,4 @@ def submit():
 
 @app.route("/style.css", methods=["POST"])
 def styles():
-    return render_template("styles.css")
+    return "styles.css"
