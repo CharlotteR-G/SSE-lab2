@@ -1,3 +1,17 @@
 body {
-    background-color: red;
+    background-color: whitesmoke;
+    font-family: arial;
+}
+
+input, select, textarea {
+    display: block;
+}
+
+header {
+    color: white;
+    background-color: #0000CD;
+}
+
+.inline {
+    display: inline;
 }

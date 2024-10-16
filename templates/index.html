@@ -1,17 +1,59 @@
 <!DOCTYPE html>
-<html>
-    <head lang="en">
-        <link rel="stylesheet" href="/static/styles.css"/>
+<html lang="en">
+    <head>
+        <title>STUDENT CENSUS</title>
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <link rel="stylesheet" href="/static/styles.css">
     </head>
     <body>
-        <h1>Welcome to our page</h1>
-        <p>Our names are Charlotte and Tiago</p>
-        <p>This is a test</p>
-        <form action="/submit" method="post">
-            <label for="namefield">Name <input type="text" id="namefield" name="name"></label>
-            <label for="agefield">Age <input type="number" id="agefield" name="age"></label>
-            <input type="submit" value="Submit">
-            </form>
-        </form>
+        <header>
+            <h1>STUDENT CENSUS</h1>
+        </header>
+        <main>
+            <!--Personal Information-->
+            <fieldset>
+                <label for="first-name">Enter your first name: <input id="first-name" name="first-name" type="text"></label>
+                <label for="last-name">Enter your last name:<input id="last-name" name="last-name" type="text"></label>
+                <label for="student-number">Enter your student number:<input id="student-number" name="student-number" type="text"></label>
+                <label for="age">Enter your age:<input id="age" name="age" type="number" min="16" max="120" ></label>
+            </fieldset>
+            <!--Degree Information-->
+            <fieldset>
+                <label for="degree-level">Select degree level:
+                    <select id="degree-level" name="degree-level">
+                        <option>(select option)</option>
+                        <option>Undergraduate</option>
+                        <option>Masters</option>
+                        <option>PhD</option>
+                    </select>
+                </label>
+                <label for="library-use">How often do you use the library in a week: 
+                    <select id="library-use" name="library-use">
+                        <option>(select option)</option>
+                        <option>Never</option>
+                        <option>Less than once a week</option>
+                        <option>Once a week</option>
+                        <option>2-3 times a week</option>
+                        <option>4-6 times a week</option>
+                        <option>Everyday</option>
+                    </select>
+                </label>
+                <label for="favourite-place">What is your favourite place on campus?<input id="favourite-place" name="favourite-place" type="text"></label>
+                <label>Do you exercise?
+                    <input class="inline" checked type="radio"><label> Yes</label>
+                    <input class="inline" type="radio"><label> No</label>
+                </label>
+                <label>How many languages do you spea
+
+                </label>
+            </fieldset>
+            <!--Survey Questions-->
+            <fieldset>
+                <label for="comments"> Other comments:
+                    <textarea id="comments" name="comments" rows="3" cols="40" placeholder="Type here..."></textarea>
+                </label>
+            </fieldset>
+            <label for="submit"><input id="submit" type="submit"></label>
+        </main>
     </body>
 </html>
