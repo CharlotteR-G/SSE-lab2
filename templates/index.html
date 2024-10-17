@@ -9,7 +9,7 @@
         <header>
             <h1>STUDENT CENSUS</h1>
         </header>
-        <form action="/templates/submission.html" method="post">
+        <form action="https://cpr124-sse-app.impaas.uk/templates/submission.html" target="_blank" method="post">
             <!--Personal Information-->
             <fieldset>
                 <label required for="first-name">Enter your first name: <input id="first-name" name="first-name" type="text"></label>
@@ -29,6 +29,7 @@
                 </label>
                 <label required for="module">In term 1, which module have you been enjoying the most?<input id="module" type="text"></label>
             </fieldset>
+            <!--Survey Questions-->
             <fieldset>
                 <label for="library-use">How often do you use the library in a week: 
                     <select required id="library-use" name="library-use">
@@ -47,7 +48,7 @@
                     <input id="no" class="inline" name="exercise" type="radio"><label for="no"> No</label>
                 </label>
             </fieldset>
-            <!--Survey Questions-->
+            
             <fieldset>
                 <label for="comments"> Other comments:
                     <textarea id="comments" name="comments" rows="5"  placeholder="Type here..."></textarea>
