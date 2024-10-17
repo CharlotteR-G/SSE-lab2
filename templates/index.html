@@ -9,26 +9,29 @@
         <header>
             <h1>STUDENT CENSUS</h1>
         </header>
-        <main>
+        <form action="/templates/submission.html" method="post">
             <!--Personal Information-->
             <fieldset>
-                <label for="first-name">Enter your first name: <input id="first-name" name="first-name" type="text"></label>
-                <label for="last-name">Enter your last name:<input id="last-name" name="last-name" type="text"></label>
-                <label for="student-number">Enter your student number:<input id="student-number" name="student-number" type="text"></label>
-                <label for="age">Enter your age:<input id="age" name="age" type="number" min="16" max="120" ></label>
+                <label required for="first-name">Enter your first name: <input id="first-name" name="first-name" type="text"></label>
+                <label required  for="last-name">Enter your last name:<input id="last-name" name="last-name" type="text"></label>
+                <label required for="student-number">Enter your student number:<input id="student-number" name="student-number" type="text"></label>
+                <label required for="age">Enter your age:<input id="age" name="age" type="number" min="16" max="120" ></label>
             </fieldset>
             <!--Degree Information-->
             <fieldset>
                 <label for="degree-level">Select degree level:
-                    <select id="degree-level" name="degree-level">
+                    <select required id="degree-level" name="degree-level">
                         <option>(select option)</option>
                         <option>Undergraduate</option>
                         <option>Masters</option>
                         <option>PhD</option>
                     </select>
                 </label>
+                <label required for="module">In term 1, which module have you been enjoying the most?<input id="module" type="text"></label>
+            </fieldset>
+            <fieldset>
                 <label for="library-use">How often do you use the library in a week: 
-                    <select id="library-use" name="library-use">
+                    <select required id="library-use" name="library-use">
                         <option>(select option)</option>
                         <option>Never</option>
                         <option>Less than once a week</option>
@@ -40,20 +43,17 @@
                 </label>
                 <label for="favourite-place">What is your favourite place on campus?<input id="favourite-place" name="favourite-place" type="text"></label>
                 <label>Do you exercise?
-                    <input class="inline" checked type="radio"><label> Yes</label>
-                    <input class="inline" type="radio"><label> No</label>
-                </label>
-                <label>How many languages do you spea
-
+                    <input id="yes" class="inline" name="exercise" checked type="radio"><label for="yes"> Yes</label>
+                    <input id="no" class="inline" name="exercise" type="radio"><label for="no"> No</label>
                 </label>
             </fieldset>
             <!--Survey Questions-->
             <fieldset>
                 <label for="comments"> Other comments:
-                    <textarea id="comments" name="comments" rows="3" cols="40" placeholder="Type here..."></textarea>
+                    <textarea id="comments" name="comments" rows="5"  placeholder="Type here..."></textarea>
                 </label>
             </fieldset>
-            <label for="submit"><input id="submit" type="submit"></label>
-        </main>
+            <label for="submit"><input id="submit" type="submit" value="submit"></label>
+        </form>
     </body>
 </html>

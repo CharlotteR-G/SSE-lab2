@@ -1,17 +1,51 @@
 body {
     background-color: whitesmoke;
     font-family: arial;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: large
 }
 
 input, select, textarea {
     display: block;
+    width: 100%;
+    margin: 3px;
+    border-radius: 20px;
+    border: 1px solid #0000CD;
+    height: 1.5em;
+    font-size: medium;
+    background-color: #b1bdff
 }
 
 header {
     color: white;
     background-color: #0000CD;
+    width: 500px;
+    text-align: center;
 }
 
 .inline {
     display: inline;
+}
+
+fieldset {
+    border: 0;
+}
+
+input[type="radio"] {
+    width: unset;
+}
+
+input[type="submit"]
+{
+    max-width: 200px;
+    min-width: 100px;
+    margin: 0 auto;
+}
+
+textarea {
+    height: 100px;
 }
