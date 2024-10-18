@@ -7,4 +7,10 @@ def hello_world():
 
 @app.route("/submit", methods=["POST"])
 def submit():
-    return render_template("submission.html")
+    input_first_name = request.form.get("first-name")
+    input_last_name = request.form.get("last-name")
+    input_student_number = request.form.get("student-number")
+    input_age = request.form.get("age")
+    input_degree = request.form.get("degree-level")
+    input_module = request.form.get("module")
+    return render_template("submission.html", first_name = input_first_name, last_name = input_last_name, age = input_age, student_number = input_student_number, degree_level = input_degree, module=input_module)
