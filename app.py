@@ -25,3 +25,14 @@ def submit():
         degree_level=input_degree,
         module=input_module,
     )
+
+@app.route("/query")
+def get_query():
+    q = request.args.get("q")
+
+
+def process_query(q):
+    if q == "dinosaurs":
+        return "Dinosaurs ruled the Earth 200 million years ago"
+    if q == "astroids":
+        return "Unknown"
