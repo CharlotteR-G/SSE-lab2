@@ -22,9 +22,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Install Flask
-      uses: pip install flask
+      run: pip install flask
     - name: Install Pytest
-      uses: pip install pytest
+      run: pip install pytest
     - name: Runs tests
       run: pytest *.py
 
