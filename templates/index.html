@@ -12,10 +12,10 @@
         <form action="\submit" target="_blank" method="post">
             <!--Personal Information-->
             <fieldset>
-                <label required for="first-name">Enter your first name: <input id="first-name" name="first-name" type="text"></label>
-                <label required  for="last-name">Enter your last name:<input id="last-name" name="last-name" type="text"></label>
-                <label required for="student-number">Enter your student number:<input id="student-number" name="student-number" type="text"></label>
-                <label required for="age">Enter your age:<input id="age" name="age" type="number" min="16" max="120" ></label>
+                <label for="first-name">Enter your first name: <input required id="first-name" name="first-name" type="text"></label>
+                <label for="last-name">Enter your last name:<input required id="last-name" name="last-name" type="text"></label>
+                <label for="student-number">Enter your student number:<input required id="student-number" name="student-number" type="text"></label>
+                <label for="age">Enter your age:<input required id="age" name="age" type="number" min="16" max="120" ></label>
             </fieldset>
             <!--Degree Information-->
             <fieldset>
@@ -27,7 +27,7 @@
                         <option>PhD</option>
                     </select>
                 </label>
-                <label required for="module">In term 1, which module have you been enjoying the most?<input id="module" type="text"></label>
+                <label for="module">In term 1, which module have you been enjoying the most?<input required id="module" type="text"></label>
             </fieldset>
             <!--Survey Questions-->
             <fieldset>
@@ -42,13 +42,12 @@
                         <option>Everyday</option>
                     </select>
                 </label>
-                <label for="favourite-place">What is your favourite place on campus?<input id="favourite-place" name="favourite-place" type="text"></label>
+                <label for="favourite-place">What is your favourite place on campus?<input required id="favourite-place" name="favourite-place" type="text"></label>
                 <label>Do you exercise?
                     <input id="yes" class="inline" name="exercise" checked type="radio"><label for="yes"> Yes</label>
                     <input id="no" class="inline" name="exercise" type="radio"><label for="no"> No</label>
                 </label>
             </fieldset>
-            
             <fieldset>
                 <label for="comments"> Other comments:
                     <textarea id="comments" name="comments" rows="5"  placeholder="Type here..."></textarea>
