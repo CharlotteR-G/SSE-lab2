@@ -34,5 +34,5 @@ def get_query():
 def process_query(q):
     if q == "dinosaurs":
         return "Dinosaurs ruled the Earth 200 million years ago"
-    if q == "astroids":
+    if q == "asteroids":
         return "Unknown"
