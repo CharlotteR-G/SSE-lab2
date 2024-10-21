@@ -30,6 +30,7 @@ def submit():
 @app.route("/query")
 def get_query():
     q = request.args.get("q")
+    return q
 
 
 def process_query(q):
