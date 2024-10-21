@@ -22,7 +22,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Runs tests
-      run: pytest app_test.py
+      run: pytest *.py
 
   deploy-to-impaas:
     needs: build
