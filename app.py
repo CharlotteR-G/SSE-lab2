@@ -26,6 +26,7 @@ def submit():
         module=input_module,
     )
 
+
 @app.route("/query")
 def get_query():
     q = request.args.get("q")
