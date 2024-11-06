@@ -13,9 +13,13 @@ def hello_world():
 def gitSubmit():
     input_git_username = request.form.get("username")
     # get repos
-    response = requests.get(f"https://api.github.com/users/{input_git_username}/repos")
+    response = requests.get(
+        f"https://api.github.com/users/\
+                            {input_git_username}/repos"
+    )
     if response.status_code == 200:
-        repos = response.json()  # data returned is a list of ‘repository’ entities
+        repos = response.json()  # data returned is a
+        # list of ‘repository’ entities
     # get commit info
     results = []  # initialise list to contain dictionary for each repo
     for repo in repos:
@@ -41,23 +45,6 @@ def gitSubmit():
         )
 
     return render_template("repos.html", repos=results)
-
-
-"""
-@app.route("/submitGit/commits", methods=["POST"])
-def github():
-    input_git_username = request.form.get("username")
-    response = requests.get(f"https://api.github.com/users/{input_git_username}/repos")
-    results = []
-    if response.status_code == 200:
-        repos = response.json() # data returned is a list of ‘repository’ entities
-        for repo in repos:
-            full_name = repo['full_name']
-            repo_response = requests.get(f"https://api.github.com/users/{full_name}/commits")
-            ## Something
-            results.append({'full_name': full_name})
-    return render_template("api_test_output.html", commits=results)
-"""
 
 
 @app.route("/submit", methods=["POST"])
