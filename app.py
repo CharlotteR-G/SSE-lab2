@@ -13,10 +13,7 @@ def hello_world():
 def gitSubmit():
     input_git_username = request.form.get("username")
     # get repos
-    response = requests.get(
-        f"https://api.github.com/users/\
-                            {input_git_username}/repos"
-    )
+    response = requests.get(f"https://api.github.com/users/{input_git_username}/repos")
     if response.status_code == 200:
         repos = response.json()  # data returned is a
         # list of ‘repository’ entities
@@ -26,9 +23,12 @@ def gitSubmit():
         full_name = repo["full_name"]
         created_at = repo["created_at"]
         repo_response = requests.get(
-            f"https://api.github.com/users/{full_name}/commits"
-        )  # get commit json for a repo
-        last_commit = repo_response[0]
+            f"https://api.github.com/repos/{full_name}/commits"
+        )
+        if repo_response.status_code == 200:
+            commits = repo_response.json()
+        # get commit json for a repo
+        last_commit = commits[0]
         commit_hash = last_commit["sha"]
         author = last_commit["commit"]["author"]["name"]
         date = last_commit["commit"]["author"]["date"]
