@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import requests
 
 app = Flask(__name__)
 
@@ -6,6 +7,57 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     return render_template("index.html")
+
+
+@app.route("/gitSubmit", methods=["POST"])
+def gitSubmit():
+    input_git_username = request.form.get("username")
+    # get repos
+    response = requests.get(f"https://api.github.com/users/{input_git_username}/repos")
+    if response.status_code == 200:
+        repos = response.json()  # data returned is a list of ‘repository’ entities
+    # get commit info
+    results = []  # initialise list to contain dictionary for each repo
+    for repo in repos:
+        full_name = repo["full_name"]
+        created_at = repo["created_at"]
+        repo_response = requests.get(
+            f"https://api.github.com/users/{full_name}/commits"
+        )  # get commit json for a repo
+        last_commit = repo_response[0]
+        commit_hash = last_commit["sha"]
+        author = last_commit["commit"]["author"]["name"]
+        date = last_commit["commit"]["author"]["date"]
+        message = last_commit["commit"]["message"]
+        results.append(
+            {
+                "full_name": full_name,
+                "created_at": created_at,
+                "hash": commit_hash,
+                "author": author,
+                "date": date,
+                "message": message,
+            }
+        )
+
+    return render_template("repos.html", repos=results)
+
+
+"""
+@app.route("/submitGit/commits", methods=["POST"])
+def github():
+    input_git_username = request.form.get("username")
+    response = requests.get(f"https://api.github.com/users/{input_git_username}/repos")
+    results = []
+    if response.status_code == 200:
+        repos = response.json() # data returned is a list of ‘repository’ entities
+        for repo in repos:
+            full_name = repo['full_name']
+            repo_response = requests.get(f"https://api.github.com/users/{full_name}/commits")
+            ## Something
+            results.append({'full_name': full_name})
+    return render_template("api_test_output.html", commits=results)
+"""
 
 
 @app.route("/submit", methods=["POST"])

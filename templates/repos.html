@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <title>REPOS</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Here is a list of {{ username }}'s repos</h1>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>Repository names</th>
+                <th>Date of creation</th>
+                <th colspan="4">Latest commit information</th>
+            </tr>
+            <tr></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Hash</td>
+                <td>Author</td>
+                <td>Date</td>
+                <td>Message</td>
+            </tr>
+            {% for repo in repos %}
+            <tr>
+                <td>{{repo.full_name}}</td>
+                <td>{{repo.created_at}}</td>
+                <td>{{repo.hash}}</td>
+                <td>{{repo.author}}</td>
+                <td>{{repo.date}}</td>
+                <td>{{repo.message}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      
+    </table>
+
+  </body>
+</html>

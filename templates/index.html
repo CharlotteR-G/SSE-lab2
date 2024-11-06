@@ -7,17 +7,26 @@
     </head>
     <body>
         <header>
-            <h1>STUDENT CENSUS</h1>
+          <h1>STUDENT CENSUS</h1>
+	  <p><a href="/templates/gitSubmission.html">Here is a link to my API experimentation</a></p>
         </header>
-        <form action="\submit" target="_blank" method="post">
-            <!--Personal Information-->
+	<!--
+        <form action="/submitGit" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your GitHub username" required>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+	-->
+        
+        <form action="/submit" target="_blank" method="post">
+            
             <fieldset>
                 <label for="first-name">Enter your first name: <input required id="first-name" name="first-name" type="text"></label>
                 <label for="last-name">Enter your last name:<input required id="last-name" name="last-name" type="text"></label>
                 <label for="student-number">Enter your student number:<input required id="student-number" name="student-number" type="text"></label>
                 <label for="age">Enter your age:<input required id="age" name="age" type="number" min="16" max="120" ></label>
             </fieldset>
-            <!--Degree Information-->
+            
             <fieldset>
                 <label for="degree-level">Select degree level:
                     <select required id="degree-level" name="degree-level">
@@ -29,7 +38,7 @@
                 </label>
                 <label for="module">In term 1, which module have you been enjoying the most?<input required id="module" type="text"></label>
             </fieldset>
-            <!--Survey Questions-->
+            
             <fieldset>
                 <label for="library-use">How often do you use the library in a week: 
                     <select required id="library-use" name="library-use">
