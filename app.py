@@ -13,7 +13,8 @@ def hello_world():
 def gitSubmit():
     input_git_username = request.form.get("username")
     # get repos
-    response = requests.get(f"https://api.github.com/users/{input_git_username}/repos")
+    response = requests.get\
+        (f"https://api.github.com/users/{input_git_username}/repos")
     if response.status_code == 200:
         repos = response.json()  # data returned is a
         # list of ‘repository’ entities
