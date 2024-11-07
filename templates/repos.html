@@ -33,12 +33,12 @@
             </tr>
             {% for repo in repos %}
             <tr>
-                <td class="entry">{{repo.full_name}}</td>
-                <td class="entry">{{repo.created_at}}</td>
-                <td class="entry">{{repo.hash}}</td>
-                <td class="entry">{{repo.author}}</td>
-                <td class="entry">{{repo.date}}</td>
-                <td class="entry">{{repo.message}}</td>
+                <td>{{repo.full_name}}</td>
+                <td>{{repo.created_at}}</td>
+                <td>{{repo.hash}}</td>
+                <td>{{repo.author}}</td>
+                <td>{{repo.date}}</td>
+                <td>{{repo.message}}</td>
             </tr>
             {% endfor %}
         </tbody>
