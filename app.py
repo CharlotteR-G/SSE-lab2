@@ -27,6 +27,9 @@ def gitSubmit():
 
     # get user profile picture
     avatar = user_info["avatar_url"]
+    git_birthday = user_info["created_at"]
+    followers = user_info["followers"]
+    following = user_info["following"]
 
     # get commit info
     results = []  # initialise list to contain dictionary for each repo
@@ -52,11 +55,16 @@ def gitSubmit():
                 "author": author,
                 "date": date,
                 "message": message,
-                "avatar": avatar,
             }
         )
+    user_info = {
+        "avatar": avatar,
+        "git_birthday": git_birthday,
+        "followers": followers,
+        "following": following,
+    }
 
-    return render_template("repos.html", repos=results)
+    return render_template("repos.html", repos=results, user_info=user_info)
 
 
 @app.route("/submit", methods=["POST"])

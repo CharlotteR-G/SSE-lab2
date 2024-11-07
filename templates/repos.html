@@ -10,7 +10,9 @@
       <h1>Here is a list of {{ username }}'s repos</h1>
       
     </header>
-    <img src="{{ avatar }}" width="75" height="75">
+    <img src="{{ user_info.avatar }}" width="75" height="75">
+    <p>This account was created on: {{ user_info.git_birthday }}</p>
+    <p>They have {{ user_info.followers }} followers and are following {{ user_info.following }} accounts</p>
     <table>
         <thead>
             <tr>
