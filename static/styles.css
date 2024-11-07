@@ -61,3 +61,7 @@ th, .sub-heading {
     border-collapse: collapse;
 }
 
+.entry {
+    border: 1px solid black;
+}
+
