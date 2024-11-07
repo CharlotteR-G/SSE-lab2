@@ -13,7 +13,7 @@
     <img src="{{ user_info.avatar }}" width="75" height="75">
     <p>This account was created on: {{ user_info.git_birthday }}</p>
     <p>They have {{ user_info.followers }} followers and are following {{ user_info.following }} accounts</p>
-    <table>
+    <table cellspacing="0">
         <thead>
             <tr>
                 <th>Repository names</th>
@@ -24,12 +24,12 @@
         </thead>
         <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td>Hash</td>
-                <td>Author</td>
-                <td>Date</td>
-                <td>Message</td>
+                <td class="sub-heading"></td>
+                <td class="sub-heading"></td>
+                <td class="sub-heading">Hash</td>
+                <td class="sub-heading">Author</td>
+                <td class="sub-heading">Date</td>
+                <td class="sub-heading">Message</td>
             </tr>
             {% for repo in repos %}
             <tr>

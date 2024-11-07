@@ -51,5 +51,13 @@ textarea {
 }
 
 table, th, td {
-  border: 1px solid;
+  background-color: #b1bdff;
 }
+
+th, .sub-heading {
+    background-color: #0000CD;
+    color: white;
+    text-align: center;
+    border-collapse: collapse;
+}
+
