@@ -26,6 +26,7 @@ def gitSubmit():
         user_info = user_response.json()
 
     # get user profile picture
+    login = user_info ["login"]
     avatar = user_info["avatar_url"]
     git_birthday = user_info["created_at"]
     followers = user_info["followers"]
@@ -62,6 +63,7 @@ def gitSubmit():
         "git_birthday": git_birthday,
         "followers": followers,
         "following": following,
+        "login": login,
     }
 
     return render_template("repos.html", repos=results, user_info=user_info)
