@@ -18,6 +18,16 @@ def gitSubmit():
     if response.status_code == 200:
         repos = response.json()  # data returned is a
         # list of ‘repository’ entities
+
+    # get user info
+    url = f"https://api.github.com/users/{input_git_username}"
+    user_response = requests.get(url)
+    if user_response.status_code == 200:
+        user_info = user_response.json()
+    
+    # get user profile picture
+    avatar = user_info["avatar_url"]
+    
     # get commit info
     results = []  # initialise list to contain dictionary for each repo
     for repo in repos:
@@ -42,6 +52,7 @@ def gitSubmit():
                 "author": author,
                 "date": date,
                 "message": message,
+                "avatar" : avatar,
             }
         )
 
