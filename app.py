@@ -26,7 +26,7 @@ def gitSubmit():
         user_info = user_response.json()
 
     # get user profile picture
-    login = user_info ["login"]
+    login = user_info["login"]
     avatar = user_info["avatar_url"]
     git_birthday = user_info["created_at"]
     followers = user_info["followers"]
