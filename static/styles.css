@@ -54,6 +54,10 @@ table, th, td {
   background-color: #b1bdff;
 }
 
+table {
+    border: 1px solid black;
+}
+
 th, .sub-heading {
     background-color: #0000CD;
     color: white;
