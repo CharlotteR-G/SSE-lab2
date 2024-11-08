@@ -18,7 +18,7 @@
             <tr>
                 <th>Repository names</th>
                 <th>Date of creation</th>
-                <th colspan="4">Latest commit information</th>
+                <th colspan="4" class="entry">Latest commit information</th>
             </tr>
             <tr></tr>
         </thead>
@@ -26,19 +26,19 @@
             <tr>
                 <td class="sub-heading"></td>
                 <td class="sub-heading"></td>
-                <td class="sub-heading">Hash</td>
-                <td class="sub-heading">Author</td>
-                <td class="sub-heading">Date</td>
-                <td class="sub-heading">Message</td>
+                <td class="sub-heading entry">Hash</td>
+                <td class="sub-heading entry" >Author</td>
+                <td class="sub-heading entry">Date</td>
+                <td class="sub-heading entry">Message</td>
             </tr>
             {% for repo in repos %}
             <tr>
-                <td>{{repo.full_name}}</td>
-                <td>{{repo.created_at}}</td>
-                <td>{{repo.hash}}</td>
-                <td>{{repo.author}}</td>
-                <td>{{repo.date}}</td>
-                <td>{{repo.message}}</td>
+                <td class="entry">{{repo.full_name}}</td>
+                <td class="entry">{{repo.created_at}}</td>
+                <td class="entry">{{repo.hash}}</td>
+                <td class="entry">{{repo.author}}</td>
+                <td class="entry">{{repo.date}}</td>
+                <td class="entry">{{repo.message}}</td>
             </tr>
             {% endfor %}
         </tbody>
